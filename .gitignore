@@ -1,0 +1,16 @@
+*._*
+*.a
+*.bak
+*.class
+*.dSYM
+*.la
+*.lo
+*.log
+*.o
+*.pid
+*.seed
+*.sw*
+*.test
+*.tmp
+*~
+.DS_Store
