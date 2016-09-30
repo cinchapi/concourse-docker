@@ -19,13 +19,13 @@ RUN mkdir -pv $CONCOURSE_SERVER_INSTALL_DIRECTORY && \
 
 WORKDIR $CONCOURSE_SERVER_BUILD_DIRECTORY
 
+VOLUME ["/root/concourse", "$CONCOURSE_SERVER_BUILD_DIRECTORY/log"]
+
 RUN ln -fsv /dev/stdout ./log/console.log && \
     ln -fsv /dev/stdout ./log/debug.log && \
     ln -fsv /dev/stderr ./log/error.log && \
     ln -fsv /dev/stdout ./log/info.log && \
     ln -fsv /dev/stderr ./log/warn.log
-
-VOLUME ["/root/concourse", "$CONCOURSE_SERVER_BUILD_DIRECTORY/log"]
 
 CMD ["./bin/concourse", "start"]
 
